@@ -1,7 +1,7 @@
 # zttp
 open http protocol service over the zmq `STREAM` socket.
 
-based on [PR: #386](https://github.com/JustinTulloss/zeromq.node/pull/386) and ideas from [hintjens' web server](http://hintjens.com/blog:42).
+based on [ZMQ_STREAM](https://github.com/zeromq/libzmq/blob/6b4d9bca0c31fc8131749396fd996d17761c999f/doc/zmq_socket.txt#L336-L340) and ideas from [hintjens' web server](http://hintjens.com/blog:42).
 
 # install
 there's an npm package dependency on [zmq](https://github.com/JustinTulloss/zeromq.node).
