@@ -1,6 +1,6 @@
 {
   "name":           "zttp",
-  "version":        "0.0.1",
+  "version":        "0.0.2",
   "description":    "zmq socket http server",
   "main":           "lib/index.js",
   "dependencies": {
