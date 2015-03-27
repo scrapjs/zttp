@@ -1,0 +1,35 @@
+{
+  "name":           "zttp",
+  "version":        "0.0.1",
+  "description":    "zmq socket http server",
+  "main": "lib/index.js",
+  "dependencies": {
+    "zmq":          "~2.10.0"
+  },
+  "devDependencies": {
+    "tape":         "~3.5.0",
+    "tap-spec":     "~2.2.1",
+    "request":      ""
+  },
+  "repository": {
+    "type":         "git",
+    "url":          "git://github.com/reqshark/httz"
+  },
+  "scripts": {
+    "travis-test":  "make check",
+    "test":         "node test | tap-spec"
+  },
+  "author": {
+    "name":         "Bent Cardan",
+    "email":        "bent@nothingsatisfies.com",
+    "url":          "http://req.link"
+  },
+  "license":        "MIT",
+  "keywords": [
+    "zmq",
+    "http",
+    "parser",
+    "ø",
+    "high performance"
+  ]
+}
