@@ -20,7 +20,7 @@ other ideas are possible since protocol optimizations and transport design patte
 * make sure [zeromq.node](https://github.com/JustinTulloss/zeromq.node) works.
 
 ```bash
-$ npm i zhttp
+$ npm i zttp
 ```
 
 *<sub>any libzmq after v4+ will work, but the RAW sockopt for connecting router socket types might be depricated</sub>*
