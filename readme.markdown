@@ -1,18 +1,29 @@
 # zttp
-open http protocol service over the zmq `STREAM` socket.
+http over zmq `STREAM` sockets. based on ideas from [hintjens' web server](http://hintjens.com/blog:42).
 
-based on [ZMQ_STREAM](https://github.com/zeromq/libzmq/blob/6b4d9bca0c31fc8131749396fd996d17761c999f/doc/zmq_socket.txt#L336-L340) and ideas from [hintjens' web server](http://hintjens.com/blog:42).
+other ideas are possible since protocol optimizations and transport design patterns of HTTP/2 standards track align well with the interface, namely:
+* [stream identifiers and stream concurrency](https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-5.1.1)
+* [server push and push requests](https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-8.2)
+* [request multiplexing](https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-5)
+
+*<sub>Multiplexing of requests is achieved by having each HTTP request-
+   response exchange associated with its own stream (Section 5).
+   Streams are largely independent of each other, so a blocked or
+   stalled request or response does not prevent progress on other
+   streams. Flow control and prioritization ensure that it is possible to
+   efficiently use multiplexed streams.</sub>*
+
+### zttp ALPHA is an experimental, high performance http server 
 
 # install
-there's an npm package dependency on [zmq](https://github.com/JustinTulloss/zeromq.node).
-
-you'll need:
-* zeromq v4+ on your system
+* latest zeromq v4+ on your system
 * make sure [zeromq.node](https://github.com/JustinTulloss/zeromq.node) works.
 
 ```bash
 $ npm i zhttp
 ```
+
+*<sub>any libzmq after v4+ will work, but the RAW sockopt for connecting router socket types might be depricated</sub>*
 
 # use
 ```js
@@ -27,4 +38,13 @@ z.route('/zmq/endpoint', function(req,res){
 
 });
 ```
+
+# test
+```js
+$ git clone https://github.com/reqshark/zttp.git && cd zttp
+$ npm install
+$ npm test
+```
+
+
 ### MIT
